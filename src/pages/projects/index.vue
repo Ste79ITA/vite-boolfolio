@@ -6,13 +6,13 @@
 
     <div class="container">
       <div class="grid">
-        <div
+        <ProjectCard
           class="card project-card"
           v-for="project in projects"
           :key="project.id"
+          :project="project"
         >
-          <h3>Title: {{ project.title }}</h3>
-        </div>
+        </ProjectCard>
       </div>
     </div>
   </div>
@@ -20,8 +20,12 @@
 
 <script>
 import axios from 'axios';
+import ProjectCard from '../../components/ProjectCard.vue';
 
 export default {
+  components: {
+    ProjectCard,
+  },
   setup() {
     return {
       projects: [],
@@ -44,4 +48,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+</style>
