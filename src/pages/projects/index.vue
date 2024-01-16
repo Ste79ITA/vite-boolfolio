@@ -42,7 +42,7 @@ export default {
         // console.log(res);
         // this.projects = res.data.results;
         this.projects = res.data.results.data;
-        //console.log(this.projects);
+        // console.log(this.projects);
       });
     },
   },
